@@ -5,7 +5,7 @@ Global optimization is a very challenging process. This is highlighted when tryi
 There are n shapes on a 2d  (n1, n2, n3, ...). Each shape contains m number of points (m0, m1, m2, m3, .....). The goal is to optimize the placement of the shapes such that they are not overlapping and the distance between the corresponding points on each shape are minimized (ie. distance between n1m0, n2m0, n3m0 are minimized). They are represented on graphs as the minimization between red point, blue points, green points, etc..
 
 ## Results of basinhopping.
-Due to the limitations of runtime, the basinhopping algorithm is only allowed to iterate 100 times. This leads to an average runtime of approximately 8 minutes for 3 shapes with 2 points in each. The result of one test is shown below.
+The basinhopping algorithm used is from [scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.basinhopping.html). Due to the limitations of runtime, the basinhopping algorithm is only allowed to iterate 100 times. This leads to an average runtime of approximately 8 minutes for 3 shapes with 2 points in each. The result of one test is shown below.
 
 ```
 fun: 49770.17545011049
@@ -33,5 +33,6 @@ The parameters on the basinhopping call do not use a pre-specified starting temp
 
 
 ## Results of simulation
-
+Average runtime of the simulation is 4.2 seconds with visualization. The simulation assumes the boxes have mass and inertia. The corresponding points on each shape are connected via "springs" with a k chosen by me. They are randomly placed around a 2d surface and let lose to collide with one another. They are solid objects so they cannot overlap. This was done in javascript originally to take advantage of the D3 library's prebuilt physics simulation; however, the use of D3 has been mostly removed. Javascript does allow for quick and easy visualization and less scalability run-time issues. 
+Here is a sample run with visualization. The runtime presented is slower than reality (I'm not sure how to make the gif go real-time).
 ![](https://i.imgur.com/pueItCy.gif)
