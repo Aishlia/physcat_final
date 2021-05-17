@@ -40,7 +40,7 @@ x: array([-1.53974410e+00,  1.04716901e+02,  1.06895558e+02,  5.53076908e+04,
 ```
 ![](/visual_src/basinhopping.png)
 
-The parameters on the basinhopping call do not use a pre-specified starting temperature. Starting placement of the objects is also random. The only constrains on the function are that the objects must not be placed on top of each other. The function over which it is optimizing is the sum of the distances between the related points. The basinhopping is also used SLSQP (sequential least squared programming) by default.
+The parameters on the basinhopping call do not use a pre-specified starting temperature. Starting placement of the objects is also random. The only constrains on the function are that the objects must not be placed on top of each other. The function over which it is optimizing is the sum of the distances between the related points. Basinhopping uses SLSQP (sequential least squared programming) by default.
 
 
 ## Results of simulation
@@ -49,7 +49,9 @@ Average runtime of the simulation is 4.2 seconds with visualization. The simulat
 Here is a sample run with visualization. The runtime presented is slower than reality (I'm not sure how to make the gif go real-time).
 
 One iteration involved placing the boxes in random locations and letting them be pulled until the system was stable.
+
 ![](https://i.imgur.com/pueItCy.gif)
+
 The optimum distance achieved over 10 runs with random starting placement is 53309. I did notice that it would occasionally dip into the 4.... range, but it would jump out. I need to add an accept criteria to allow for such states. The runtime for 10 runs was under 1 second.
 
 NOTE: The gif included is running an old version that does not allow for full rotation (only 90 degree). I could not get my screen recording to work on the computer that could run the full rotations. I don't know why it doesn't work with M1.
