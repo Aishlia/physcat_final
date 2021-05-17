@@ -2,7 +2,14 @@
 Global optimization is a very challenging process. This is highlighted when trying to optimize multi-variable functions with constraints that scale with the number of items being optimized.
 
 ## Goal of the optimization
-There are n shapes on a 2d  (n1, n2, n3, ...). Each shape contains m number of points (m0, m1, m2, m3, .....). The goal is to optimize the placement of the shapes such that they are not overlapping and the distance between the corresponding points on each shape are minimized (ie. distance between n1m0, n2m0, n3m0 are minimized). They are represented on graphs as the minimization between red point, blue points, green points, etc..
+There are n shapes on a 2d plane (n1, n2, n3, ...). Each shape contains m number of points (m0, m1, m2, m3, .....). The goal is to optimize the placement of the shapes such that they are not overlapping and the distance between the corresponding points on each shape are minimized (ie. distance between n1m0, n2m0, n3m0 are minimized). They are represented on graphs as the minimization between red point, blue points, green points, etc..
+
+## Overview
+Basinhopping is a stochastic global optimization method David Wales and Jonathan Doye. It is an iterative algorithm where every cycle does the following:
+1. Goes to a random perturbation of the coordinates.
+2. Does local minimization.
+3. Accepts of rejects the new coordinates base on the minimized function value.
+In scipy, basinhopping is the replacement for the now depricated simmulated annealing that worked in similar ways.
 
 ## Setup
 Two algorithms are compared on two fronts: least distance between points achieved and runtime. One algorithm is the basinhopping algorithm from [scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.basinhopping.html). The other is a simulation built by me that pulls corresponding points together with springs. Shapes in both algorithms are allowed to move on 3 axis of freedom (left/right, up/down, and rotation).
