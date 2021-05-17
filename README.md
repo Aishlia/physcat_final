@@ -9,7 +9,8 @@ Basinhopping is a stochastic global optimization method David Wales and Jonathan
 1. Goes to a random perturbation of the coordinates.
 2. Does local minimization.
 3. Accepts of rejects the new coordinates base on the minimized function value.
-In scipy, basinhopping is the replacement for the now depricated simmulated annealing that worked in similar ways.
+
+In scipy, basinhopping is the replacement for the now deprecated simulated annealing that worked in similar ways.
 
 ## Setup
 Two algorithms are compared on two fronts: least distance between points achieved and runtime. One algorithm is the basinhopping algorithm from [scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.basinhopping.html). The other is a simulation built by me that pulls corresponding points together with springs. Shapes in both algorithms are allowed to move on 3 axis of freedom (left/right, up/down, and rotation).
@@ -44,10 +45,13 @@ The parameters on the basinhopping call do not use a pre-specified starting temp
 
 ## Results of simulation
 Average runtime of the simulation is 4.2 seconds with visualization. The simulation assumes the boxes have mass and inertia. The corresponding points on each shape are connected via "springs" with a k chosen by me. They are randomly placed around a 2d surface and let lose to collide with one another. They are solid objects so they cannot overlap. This was done in javascript originally to take advantage of the D3 library's prebuilt physics simulation; however, the use of D3 has been mostly removed. Javascript does allow for quick and easy visualization and less scalability run-time issues.
+
 Here is a sample run with visualization. The runtime presented is slower than reality (I'm not sure how to make the gif go real-time).
+
 One iteration involved placing the boxes in random locations and letting them be pulled until the system was stable.
 ![](https://i.imgur.com/pueItCy.gif)
 The optimum distance achieved over 10 runs with random starting placement is 53309. I did notice that it would occasionally dip into the 4.... range, but it would jump out. I need to add an accept criteria to allow for such states. The runtime for 10 runs was under 1 second.
+
 NOTE: The gif included is running an old version that does not allow for full rotation (only 90 degree). I could not get my screen recording to work on the computer that could run the full rotations. I don't know why it doesn't work with M1.
 
 ## Conclusion
