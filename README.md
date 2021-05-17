@@ -5,7 +5,7 @@ Global optimization is a very challenging process. This is highlighted when tryi
 There are n shapes on a 2d plane (n1, n2, n3, ...). Each shape contains m number of points (m0, m1, m2, m3, .....). The goal is to optimize the placement of the shapes such that they are not overlapping and the distance between the corresponding points on each shape are minimized (ie. distance between n1m0, n2m0, n3m0 are minimized). They are represented on graphs as the minimization between red point, blue points, green points, etc..
 
 ## Overview
-Basinhopping is a stochastic global optimization method David Wales and Jonathan Doye. It is an iterative algorithm where every cycle does the following:
+Basinhopping is a stochastic global optimization method developed by David Wales and Jonathan Doye. It is an iterative algorithm where every cycle does the following:
 1. Goes to a random perturbation of the coordinates.
 2. Does local minimization.
 3. Accepts of rejects the new coordinates base on the minimized function value.
