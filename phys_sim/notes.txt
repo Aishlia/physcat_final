@@ -1,0 +1,1 @@
+- By adding animate(shape) to the animate function and the requestAnimateFrame, only the first and last frames are displayed signifigantly reducing run-time to near instantaious. 

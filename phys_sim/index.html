@@ -1,0 +1,49 @@
+<html>
+<head>
+    <style>
+    body {margin: 0;}
+    /* .div-width{
+        width: 100%;
+        height: 50px;
+        margin-top: 50px;
+        text-align: center;
+    }
+    .nice-button{
+        width: 150px;
+        height: 50px;
+        border-radius: 12px;
+        color: white;
+        background-color: #5f42ff;
+        font-size: 30px;
+        border: none;
+    }
+    .display{
+        padding: 50px;
+    } */
+    </style>
+</head>
+<div class="div-width">
+    <h2 id='output'></h2>
+    <button type="button" onclick="start()">start/resume</button>
+    <button type="button" onclick="reset()">reset</button>
+    <button type="button" onclick="start_animation()">start: animation (w/ drag)</button>
+    <button type="button" onclick="start_no_animation()">start: no animation</button>
+</div>
+
+<body>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+    <script src="SAT.js"></script>
+    <script src="mainWithTheDrag-d3v4.js"></script>
+</body>
+<script>
+function showCoords(evt){
+    console.log(
+        "Mouse position: ",
+        "clientX value: " + evt.clientX + "\n" +
+        "clientY value: " + evt.clientY + "\n"
+    );
+}
+</script>
+<body ondblclick="showCoords(event)"></body>
+</html>
