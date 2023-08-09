@@ -1,4 +1,4 @@
-# Comparison of Scipy basinhopping to a physical simulation with springs
+# Comparison of Scipy Basinhopping to a D3 Physical Simulation With Springs
 Global optimization is a very challenging process. This is highlighted when trying to optimize multi-variable functions with constraints that scale with the number of items being optimized.
 
 ## Goal of the optimization
